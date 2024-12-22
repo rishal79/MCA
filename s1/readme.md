@@ -1,7 +1,7 @@
 <H1>S1 LAB PROGRAMS</H1>
 
 ## PROGRAMMING LANGUAGES
-<p align="left>
+<p align="left">
 <img src="readme/html.png" width="70" height="70">
 <img src="readme/css.png" width="70" height="70">
 <img src="readme/javascript.png" width="70" height="70">

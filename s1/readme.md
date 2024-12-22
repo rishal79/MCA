@@ -8,6 +8,7 @@
 </p>
 <p align="left">
 <img src="readme/python.png" width="70" height="70">
+<img src="readme/c.png" width="70" height="70">
 <img src="readme/php.png" width="70" height="70">
 <img src="readme/mysql.png" width="70" height="70">
 </p>

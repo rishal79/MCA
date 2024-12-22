@@ -18,5 +18,5 @@
 <p align="left">
 <img src="readme/python_idle.png" width="60" height="60">
 <img src="readme/putty.png" width="60" height="60">
-<img src="readme/notepad.png" width="60" height="60">
+<img src="readme/notepad.png" width="50" height="60">
 </p>

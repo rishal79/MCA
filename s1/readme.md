@@ -12,3 +12,11 @@
 <img src="readme/php.png" width="60" height="60">
 <img src="readme/mysql.png" width="70" height="70">
 </p>
+
+## IDLE
+
+<p align="left">
+<img src="readme/python_idle.png" width="70" height="70">
+<img src="readme/putty.png" width="70" height="70">
+<img src="readme/notepad.png" width="70" height="70">
+</p>

@@ -9,19 +9,17 @@ class Complexadd{
 void add(Complexadd others){
         int real=this.r+others.r;
         int image=this.i+others.i;
-        System.out.println(real+"+i"+image);
+        System.out.println("sum of complex number:"+real+"+i"+image);
 }
 public static void main(String[] args){
 Scanner s=new Scanner(System.in);
 System.out.println("enter first complex number");
-System.out.println("enter real part:");
+System.out.println("enter real  and imaginary part:");
 int real=s.nextInt();
-System.out.println("enter the imaginary part:");
 int image=s.nextInt();
 System.out.println("enter second complex number");
-System.out.println("enter real part:");
+System.out.println("enter real and imaginary part :");
 int real1=s.nextInt();
-System.out.println("enter the imaginary part:");
 int image1=s.nextInt();
 
 Complexadd c1=new Complexadd(real,image);

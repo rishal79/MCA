@@ -1,30 +1,17 @@
 import java.util.Scanner;
-class Complexadd{
-        int r,i;
-        Complexadd(int real,int image){
-        this.r=real;
-        this.i=image;
-}
+class Complexadd {
+    int real, imag;
 
-void add(Complexadd others){
-        int real=this.r+others.r;
-        int image=this.i+others.i;
-        System.out.println("sum of complex number:"+real+"+i"+image);
-}
-public static void main(String[] args){
-Scanner s=new Scanner(System.in);
-System.out.println("enter first complex number");
-System.out.println("enter real  and imaginary part:");
-int real=s.nextInt();
-int image=s.nextInt();
-System.out.println("enter second complex number");
-System.out.println("enter real and imaginary part :");
-int real1=s.nextInt();
-int image1=s.nextInt();
+    Complexadd() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter real and imaginary part:");
+        real = s.nextInt();
+        imag = s.nextInt();
+    }
 
-Complexadd c1=new Complexadd(real,image);
-Complexadd c2=new Complexadd(real1,image1);
-c1.add(c2);
-
-}
+    public static void main(String[] args) {
+        Complexadd c1 = new Complexadd();
+        Complexadd c2 = new Complexadd();
+        System.out.println("Sum: " + (c1.real + c2.real) + " + i" + (c1.imag + c2.imag));
+    }
 }

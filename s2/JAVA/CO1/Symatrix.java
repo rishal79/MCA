@@ -1,0 +1,42 @@
+import java.util.Scanner;
+class Symatrix{
+    public static void main(String[] args){
+        int i,j;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter rows and cols");
+        int rows=sc.nextInt();
+        int cols=sc.nextInt();
+        int a[][]=new int[rows][cols];
+        if(rows!=cols){
+            System.out.println("not posiible");
+        }else{
+            System.out.println("enter the elements");
+            for(i=0;i<rows;i++){
+                for(j=0;j<cols;j++){
+                    a[i][j]=sc.nextInt();
+                }
+            }
+            System.out.println("transpose matrix");
+            for(i=0;i<cols;i++){
+                for(j=0;j<rows;j++){
+                    System.out.print(a[j][i]+" ");
+                } 
+                System.out.println();
+            }
+            boolean s=true;
+            for(i=0;i<rows;i++){
+                for(j=0;j<cols;j++){
+                    if(a[i][j]!=a[j][i]){
+                        s=false;
+                        break;
+                    }
+                }
+            }
+            if(s){
+                System.out.println("symmetric ");
+            }else{
+                System.out.println("not symmetric");
+            }
+        }
+    }
+}

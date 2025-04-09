@@ -1,7 +1,6 @@
-#1/bin/batch
-echo "Enter the first number : "
+#!/bin/bash
+echo "Enter the first number and second number : "
 read a
-echo "Enter second number : "
 read b
 if [ $a == $b ]
 then

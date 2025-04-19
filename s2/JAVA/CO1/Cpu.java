@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Cpu {
     int price;
 
@@ -38,9 +39,18 @@ class Cpu {
     }
 
     public static void main(String[] args) {
-        Cpu c = new Cpu(40000);
-        Cpu.Processor p = c.new Processor(4, "Intel");
-        Cpu.Ram r = new Cpu.Ram("8GB", "Crucial");
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter CPU price: ");
+        int price = sc.nextInt();
+        Cpu c = new Cpu(price);
+        System.out.print("Enter number of cores and manufacturer: ");
+        int core = sc.nextInt();
+        String manufacturer = sc.next();
+        Cpu.Processor p = c.new Processor(core,manufacturer);
+        System.out.print("Enter RAM size and manufacturer: ");
+        String memory = sc.next();
+        String manu=sc.next();
+        Cpu.Ram r = new Cpu.Ram(memory,manu);
 
         c.display();
         p.display();

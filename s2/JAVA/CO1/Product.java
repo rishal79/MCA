@@ -13,9 +13,9 @@ class Product{
         Product p2=new Product();
         Product p3=new Product();
 
-        if(p1.price>p2.price && p1.price>p3.price){
+        if(p1.price<p2.price && p1.price<p3.price){
             System.out.println(p1.pname+" "+p1.price);
-        }else if(p2.price>p3.price){
+        }else if(p2.price<p3.price){
             System.out.println(p2.pname+" "+p2.price);
         }else{
             System.out.println(p3.pname+" "+p3.price);

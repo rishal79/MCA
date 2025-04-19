@@ -1,4 +1,4 @@
-public class StringManipulation {
+class StringManipulation {
     public static void main(String[] args) {
         String original = "   Hello, good morning   ";
 

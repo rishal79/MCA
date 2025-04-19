@@ -8,6 +8,7 @@ class Arraysearch {
         System.out.println("Enter the size of array:");
         n = sc.nextInt();
         a = new int[n];
+        sc.close();
     }
 
     public static void main(String[] args) {
@@ -29,7 +30,8 @@ class Arraysearch {
                 return;
             }
         }
-
+        
         System.out.println("Element not found");
+        s.close();  
     }
 }

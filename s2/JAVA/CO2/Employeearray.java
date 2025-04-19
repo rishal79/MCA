@@ -29,6 +29,6 @@ class Employeearray {
             }
         }
         System.out.println("Employee not found");
-        
+        s.close();
     }
 }

@@ -21,5 +21,6 @@ class Arraysearch {
         if(i==n){
             System.out.println("not found");
         }
+        sc.close();
     }
 }

@@ -2,9 +2,9 @@ class StringManipulation {
     public static void main(String[] args) {
         String original = "   Hello, good morning   ";
 
-        System.out.println("Original String: '" + original + "'");
+       
         System.out.println("=== String Methods ===");
-
+         System.out.println("Original String: '" + original + "'");
         System.out.println("1. Changing Case");
         System.out.println("Uppercase: " + original.toUpperCase());
         System.out.println("Lowercase: " + original.toLowerCase());
@@ -30,9 +30,9 @@ class StringManipulation {
         System.out.println("Length of original string: " + original.length());
         System.out.println();
 
-        System.out.println("Original String for StringBuffer: 'Hello'");
+        
         System.out.println("=== StringBuffer Methods ===");
-
+        System.out.println("Original String for StringBuffer: 'Hello'");
         StringBuffer sb = new StringBuffer("Hello");
         sb.append(", good morning");
         System.out.println("After append: " + sb);

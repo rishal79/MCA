@@ -1,186 +1,57 @@
-# 🍃 MongoDB Basic Syntax Cheat Sheet
+##mongodb question collection
 
-## 🔹 1. Database Commands
-```js
-// Show all databases
-show dbs
+### employee
+```sql
++--------+----------+-----+-------------------+-------------+------------------------+--------------+
+| eid    | name     | age | dname             | pname       | members                | status       |
++--------+----------+-----+-------------------+-------------+------------------------+--------------+
+|        |          |     |                   | Website     | Alice, Bob, John       | In Progress  |
+| E12345 | Doe      |  40 | Engineering       |-------------+------------------------+--------------+
+|        |          |     |                   | Mobile App  | Tom, Jane, Mike        | Completed    |
++--------+----------+-----+-------------------+-------------+------------------------+--------------+ 
+| E98765 | Johnson  |  32 | Finance           | Financial   | William, David         | Completed    |
++--------+----------+-----+-------------------+-------------+------------------------+--------------+ 
+| E13579 | Emily    |  28 | Human Resources   | Onboarding  | Sophia, Robert         | In Progress  |
++--------+----------+-----+-------------------+-------------+------------------------+--------------+ 
+|        |          |     |                   | Product     | Mark, Emily            | Completed    |
+| E54321 | Smith    |  37 | Sales             |-------------+------------------------+--------------+
+|        |          |     |                   | Marketing   | Jane, Tom              | In Progress  |
++--------+----------+-----+-------------------+-------------+------------------------+--------------+ 
+| E24680 | William  |  30 | Human Resources   | Quality     | Anna, Sophia, James    | In Progress  |
++--------+----------+-----+-------------------+-------------+------------------------+--------------+
 
-// Create or switch to a database
-use database_name
-
-// Show current database
-db
-
-// Drop a database
-db.dropDatabase()
 ```
 
----
+### categories
+```sql
++-------------+----------+------------------+-------------+-------------------------+----------+
+| category_id | name     | parent_category  | product_id  | product_name            | quantity |
++-------------+----------+------------------+-------------+-------------------------+----------+
+| 1           | Phones   | NULL             |                   NULL                           |
++-------------+----------+------------------+-------------+-------------------------+----------+
+| 2           | Laptops  | NULL             | 2           | MacBook Pro             | 5        |
++-------------+----------+------------------+-------------+-------------------------+----------+
+| 3           | Consoles | NULL             | 4           | Sony PlayStation 5      | 20       |
+|             |          |                  | 5           | Nintendo                | 12       |
++-------------+----------+------------------+-------------+-------------------------+----------+
+| 4           | iPhone   | 1                | 1           | iPhone 12               | 10       |
++-------------+----------+------------------+-------------+-------------------------+----------+
+| 5           | Windows  | 2                | 3           | Dell XPS 15             | 8        |
++-------------+----------+------------------+-------------+-------------------------+----------+
+| 6           | Xbox     | 3                | 6           | Xbox Series X           | 25       |
++-------------+----------+------------------+-------------+-------------------------+----------+
 
-## 🔹 2. Collection Commands
-```js
-// Show collections (like tables)
-show collections
-
-// Create a collection
-db.createCollection("collection_name")
-
-// Drop a collection
-db.collection_name.drop()
 ```
+### inventory
 
----
-
-## 🔹 3. Insert Documents
-```js
-// Insert one document
-db.collection_name.insertOne({ key1: value1, key2: value2 })
-
-// Insert many documents
-db.collection_name.insertMany([
-  { key1: value1 },
-  { key1: value2 }
-])
+```sql
++----+------------+-------+-------------+-----+--------+-------+------------------------+----------------------+
+| _id| name       | price | releaseDate | ram | screen | cpu   | color                  | storage              |
++----+------------+-------+-------------+-----+--------+-------+------------------------+----------------------+
+|  1 | xPhone     |   799 | 2011-05-14  |   4 |    6.5 |  2.66 | white,black            | 64,128,256           |
+|  2 | xTablet    |   899 | 2011-09-01  |  16 |    9.5 |  3.66 | white,black,purple     | 128,256,512          |
+|  3 | SmartTablet|   899 | 2015-01-14  |  12 |    9.7 |  3.66 | blue                   | 16,64,128            |
+|  4 | SmartPad   |   699 | 2020-05-14  |   8 |    9.7 |  1.66 | white,orange,gold,gray | 128,256,1024         |
+|  5 | SmartPhone |   599 | 2022-09-14  |   4 |    9.7 |  1.66 | white,orange,gold,gray | 128,256              |
++----+------------+-------+-------------+-----+--------+-------+------------------------+----------------------+
 ```
-
----
-
-## 🔹 4. Find / Query Documents
-```js
-// Find all documents
-db.collection_name.find()
-
-// Find with condition
-db.collection_name.find({ key: value })
-
-// Pretty print results
-db.collection_name.find().pretty()
-```
-
----
-
-## 🔹 5. Update Documents
-```js
-// Update one document
-db.collection_name.updateOne(
-  { key: value }, // filter
-  { $set: { key: new_value } } // update
-)
-
-// Update many documents
-db.collection_name.updateMany(
-  { key: value },
-  { $set: { key: new_value } }
-)
-```
-
----
-
-## 🔹 6. Delete Documents
-```js
-// Delete one document
-db.collection_name.deleteOne({ key: value })
-
-// Delete many documents
-db.collection_name.deleteMany({ key: value })
-```
-
----
-
-## 🔹 7. Query Operators
-```js
-// Greater than, less than
-{ age: { $gt: 18 } }
-{ age: { $lt: 30 } }
-
-// AND / OR
-{ $and: [ { age: { $gt: 18 } }, { city: "Delhi" } ] }
-{ $or: [ { city: "Delhi" }, { city: "Mumbai" } ] }
-
-// IN / NOT IN
-{ city: { $in: ["Delhi", "Mumbai"] } }
-{ city: { $nin: ["Chennai"] } }
-
-// NOT
-{ age: { $not: { $gt: 25 } } }
-```
-
----
-
-## 🔹 8. Projection (Select Fields)
-```js
-// Include only name and age
-db.collection_name.find({}, { name: 1, age: 1 })
-
-// Exclude _id
-db.collection_name.find({}, { name: 1, _id: 0 })
-```
-
----
-
-## 🔹 9. Sorting and Limiting
-```js
-// Sort by age ascending
-db.collection_name.find().sort({ age: 1 })
-
-// Sort by age descending
-db.collection_name.find().sort({ age: -1 })
-
-// Limit results
-db.collection_name.find().limit(5)
-
-// Skip results
-db.collection_name.find().skip(5)
-```
-
----
-
-## 🔹 10. Aggregation (Basic)
-```js
-// Group by field and count
-db.collection_name.aggregate([
-  { $group: { _id: "$city", total: { $sum: 1 } } }
-])
-
-// Match + group example
-db.collection_name.aggregate([
-  { $match: { status: "active" } },
-  { $group: { _id: "$city", count: { $sum: 1 } } }
-])
-```
-
----
-
-## 🔹 11. Indexing
-```js
-// Create index
-db.collection_name.createIndex({ key: 1 })   // 1 = ASC, -1 = DESC
-
-// View indexes
-db.collection_name.getIndexes()
-
-// Drop index
-db.collection_name.dropIndex("key_1")
-```
-
----
-
-## 🔹 12. Common Commands
-```js
-// Count documents
-db.collection_name.countDocuments()
-
-// Distinct values of a field
-db.collection_name.distinct("fieldname")
-
-// Rename collection
-db.collection_name.renameCollection("new_name")
-
-// Drop entire collection
-db.collection_name.drop()
-```
-
----
-
-🧠 *MongoDB stores data as BSON (Binary JSON), and operations are performed using JavaScript-like syntax in the shell.*
-

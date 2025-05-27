@@ -1,4 +1,4 @@
-## mongodb question collection
+## mongodb collections
 
 ### employee
 ```sql

@@ -1,0 +1,66 @@
+import java.util.*;
+
+class Employee {
+    int empId;
+    String name, address;
+    double salary;
+
+    Employee(int empId, String name, double salary, String address) {
+        this.empId = empId;
+        this.name = name;
+        this.salary = salary;
+        this.address = address;
+    }
+}
+
+class Teacher extends Employee {
+    String department, subject;
+
+    Teacher(int empId, String name, double salary, String address, String department, String subject) {
+        super(empId, name, salary, address);
+        this.department = department;
+        this.subject = subject;
+    }
+
+    void display() {
+        System.out.println("\nID: " + empId);
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+        System.out.println("Address: " + address);
+        System.out.println("Department: " + department);
+        System.out.println("Subject: " + subject);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of teachers: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        Teacher[] t = new Teacher[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nEnter details of Teacher " + (i + 1));
+            System.out.print("ID: ");
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Name: ");
+            String name = sc.nextLine();
+            System.out.print("Salary: ");
+            double sal = sc.nextDouble();
+            sc.nextLine();
+            System.out.print("Address: ");
+            String addr = sc.nextLine();
+            System.out.print("Department: ");
+            String dept = sc.nextLine();
+            System.out.print("Subject: ");
+            String subj = sc.nextLine();
+
+            t[i] = new Teacher(id, name, sal, addr, dept, subj);
+        }
+
+        System.out.println("\n--- Teacher Details ---");
+        for (Teacher teacher : t)
+            teacher.display();
+    }
+}

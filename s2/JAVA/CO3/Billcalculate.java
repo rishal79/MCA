@@ -1,0 +1,43 @@
+interface Bill {
+    int calculate();
+}
+
+class Product implements Bill {
+    int productId;
+    String name;
+    int quantity;
+    int unitPrice;
+
+    Product(int id, String n, int q, int p) {
+        productId = id;
+        name = n;
+        quantity = q;
+        unitPrice = p;
+    }
+
+    public int calculate() {
+        return quantity * unitPrice;
+    }
+
+    public void display() {
+        System.out.printf("%-10d %-10s %-10d %-10d %-10d\n", productId, name, quantity, unitPrice, calculate());
+    }
+}
+
+public class Billcalculate {
+    public static void main(String[] args) {
+        Product p1 = new Product(101, "A", 2, 25);
+        Product p2 = new Product(102, "B", 1, 100);
+
+        int netAmount = p1.calculate() + p2.calculate();
+
+        System.out.println("Order No.    : 1234");
+        System.out.println("Date         : 08-05-2025\n");
+        System.out.println("Product Id  Name       Quantity   Unit Price Total");
+        System.out.println("---------------------------------------------------");
+        p1.display();
+        p2.display();
+        System.out.println("---------------------------------------------------");
+        System.out.println("Net Amount: " + netAmount);
+    }
+}

@@ -1,0 +1,25 @@
+import java.util.*;
+
+class Area {
+    double calculate(double radius) {
+        return 3.14 * radius * radius; // Circle
+    }
+
+    double calculate(double length, double breadth) {
+        return length * breadth; // Rectangle
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Area a = new Area();
+
+        System.out.print("Enter radius of circle: ");
+        double r = sc.nextDouble();
+        System.out.println("Area of Circle: " + a.calculate(r));
+
+        System.out.print("Enter length and breadth of rectangle: ");
+        double l = sc.nextDouble(), b = sc.nextDouble();
+        System.out.println("Area of Rectangle: " + a.calculate(l, b));
+
+    }
+}

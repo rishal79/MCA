@@ -1,0 +1,75 @@
+import java.util.*;
+
+class Publisher {
+    String name;
+
+    Publisher(String name) {
+        this.name = name;
+    }
+}
+
+class Book extends Publisher {
+    String title;
+
+    Book(String name, String title) {
+        super(name);
+        this.title = title;
+    }
+}
+
+class Literature extends Book {
+    Literature(String name, String title) {
+        super(name, title);
+    }
+
+    void display() {
+        System.out.println("\n[ Literature Book ]");
+        System.out.println("Title: " + title);
+        System.out.println("Publisher: " + name);
+    }
+}
+
+class Fiction extends Book {
+    Fiction(String name, String title) {
+        super(name, title);
+    }
+
+    void display() {
+        System.out.println("\n[ Fiction Book ]");
+        System.out.println("Title: " + title);
+        System.out.println("Publisher: " + name);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Literature> litBooks = new ArrayList<>();
+        ArrayList<Fiction> ficBooks = new ArrayList<>();
+
+        System.out.print("Enter number of books: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nEnter book " + (i + 1) + " details:");
+            System.out.print("Title: ");
+            String title = sc.nextLine();
+            System.out.print("Publisher: ");
+            String pub = sc.nextLine();
+            System.out.print("Category (literature/fiction): ");
+            String cat = sc.nextLine().toLowerCase();
+
+            if (cat.equals("literature"))
+                litBooks.add(new Literature(pub, title));
+            else if (cat.equals("fiction"))
+                ficBooks.add(new Fiction(pub, title));
+            else
+                System.out.println("Invalid category. Skipped.");
+        }
+
+        System.out.println("\n--- Literature Books ---");
+        for (Literature b : litBooks) b.display();
+
+        System.out.println("\n--- Fiction Books ---");
+        for (Fiction b : ficBooks) b.display();
+    }
+}

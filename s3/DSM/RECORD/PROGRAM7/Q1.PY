@@ -18,10 +18,10 @@ lr_model = LinearRegression()
 lr_model.fit(x_train, y_train)
 
 # Predict
-lr_prediction = ir_model.predict(x_test)
+lr_prediction = lr_model.predict(x_test)
 
 # Calculate MSE
-lr_mse = mean_squared_error(y_test, ir_prediction)
+lr_mse = mean_squared_error(y_test, lr_prediction)
 
 print(f'Linear Regression MSE: {lr_mse}')
 

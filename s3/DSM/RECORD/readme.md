@@ -61,3 +61,24 @@
 **AIM:** NAIVE BAYES ALGORITHM  
 
 - 1. Program to implement Naïve Bayes algorithm using any standard dataset available in the public domain and find the accuracy of the algorithm. [code](./PROGRAM6/Q1.PY)  
+
+
+## PROGRAM 7  
+**AIM:** LINEAR AND MULTIPLE REGRESSION  
+
+- 1. Program to implement linear regression technique using any standard dataset available in the public domain and evaluate its performance. [code](./PROGRAM7/Q1.PY)  
+- 2. Program to implement multiple regression technique using any standard dataset available in the public domain and evaluate its performance. [code](./PROGRAM7/Q2.PY)  
+
+---
+
+## PROGRAM 8  
+**AIM:** SUPPORT VECTOR MACHINE  
+
+- 1. Program to implement text classification using Support Vector Machine. [code](./PROGRAM8/Q1.PY)  
+
+---
+
+## PROGRAM 9  
+**AIM:** DECISION TREE  
+
+- 1. Program to implement decision trees using any standard dataset available in the public domain and find the accuracy of the algorithm. [code](./PROGRAM9/Q1.PY)  

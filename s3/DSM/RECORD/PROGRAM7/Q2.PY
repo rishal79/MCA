@@ -17,3 +17,14 @@ mlr_predictions=mlr_model.predict(x_test)
 mlr_mse=mean_squared_error(y_test,mlr_predictions)
 print(f'Multiple Linear Regression MSE: {mlr_mse}')
 
+# algorithm
+
+# Step 1: Import necessary libraries (numpy, pandas, sklearn modules).
+# Step 2: Load the Iris dataset and separate features (X) and target labels (y).
+# Step 3: Select the first feature column and reshape it for regression.
+# Step 4: Split the dataset into training and testing sets (80% train, 20% test).
+# Step 5: Initialize the Multiple Linear Regression model.
+# Step 6: Train the model using the training data.
+# Step 7: Predict target values for the test data.
+# Step 8: Calculate the Mean Squared Error (MSE) between actual and predicted values.
+# Step 9: Print the MSE result.
